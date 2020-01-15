@@ -1,0 +1,98 @@
+html{
+	padding: 0px;
+	margin: 0px;
+}
+body{
+	padding: 0px;
+	margin: 0px;
+}
+
+
+header a img{
+	width: 100%;
+}
+section{
+	width: 80%;
+	min-height: 100px;
+	padding: 2%;
+	margin:0 auto;
+	margin-left: 10%;
+	margin-top: 50px;
+    color:white;
+    background-color:rgba(0,0,0,0.51);
+   
+   
+}
+
+.aceptar{
+	background-color: #f13453;
+	color:white;
+	padding-left: 20px;
+	padding-right: 20px;
+	border-radius: 4px;
+	font-size: 1.3rem;
+
+
+}
+.aceptar:hover{
+	background-color: #4a4a4a;
+	cursor: pointer;
+}
+
+
+
+/*************************************/
+
+
+
+.selected {
+  top   : -20px;
+  color : #4eacff;
+  background-color: #fff;
+  box-shadow : 0 0 5px 0 rgba(255, 255, 255, 0.7);
+  transition : all .4s;
+}
+
+.selected:after {
+  border-color : white transparent transparent transparent;
+  transition   : all .4s;
+}
+
+a.fun {
+  display : none;
+}
+
+#formulario{
+	width: 50%;
+	height: auto;
+	margin:0 auto;
+    
+}
+input{
+    
+	width: 80%;
+	height: 30px;
+	color:white;
+}
+form{
+    margin:auto;
+    width:50%;
+    max-width: 500px;
+    background-color:rgba(0,0,0,0.51);
+    padding: 30px;
+    border:1px solid rgba(0,0,0,0.2);
+    display:block;
+    
+}
+input{
+    text-align: block;
+    padding:inherit;
+    width:100%;
+    margin:10px 0;
+    font-size: 15px;
+    color: black;
+    }
+#imag{
+       color: white;
+    
+}

@@ -1,0 +1,38 @@
+*{
+	font-family: Arial;
+	font-size: 14px;
+}
+html{
+	background-color: #F2F2F2;
+}
+table{
+	border-collapse: collapse;
+}
+input, button{
+	cursor: pointer;
+	padding: 3px;
+	width: 100%;
+	box-sizing: border-box;
+}
+.content{
+	margin: auto;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	width: 600px;
+}
+.cartHeader{
+	background-color: #01A9DB;
+	color: #FFF;
+	cursor: pointer;
+}
+.cartBody{
+	background-color: #FFF;
+}
+.productsHeader{
+	background-color: #585858;
+	color: #FFF;
+	cursor: pointer;
+}
+.productsBody{
+	background-color: #FFF;
+}

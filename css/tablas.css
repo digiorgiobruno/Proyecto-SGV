@@ -1,0 +1,27 @@
+#tabla{
+    color: oldlace;
+    border-collapse: collapse;
+ }
+th, td{
+    
+    padding: 20px;
+   
+}
+thead{
+    background-color: #246355;
+    
+    
+}
+.sepcompra{
+        text-align: center;
+        
+        background-color: #246355;
+        
+}
+.tuser td{
+    display: block;
+   background-color: darkslategray;
+    border-radius: 10px;
+    text-align: center;
+    width: 100%;
+}
