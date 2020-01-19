@@ -8,67 +8,76 @@ if(isset($_SESSION['Password'])&&isset($_SESSION['Usuario'])){
     }
 ?>
 
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es">
-<head>
-	<meta charset="utf-8"/>
-	<title>Carrito de Compras</title>
-    <link rel="stylesheet" type="text/css" href="./css/navstyle.css">
-	<link rel="stylesheet" type="text/css" href="./css/estilos.css">
-	
 
-	
-	<script type="text/javascript" src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
-	<script type="text/javascript"  href="./js/scripts.js"></script>
-	
+<head>
+    <meta charset="utf-8" />
+    <title>Carrito de Compras</title>
+    <link rel="stylesheet" type="text/css" href="./css/navstyle.css">
+    <link rel="stylesheet" type="text/css" href="./css/estilos.css">
+
+
+
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" href="./js/scripts.js"></script>
+
 </head>
+
 <body>
 
-<div class="fondo"> </div>
 
-<!--		<a href="./carritodecompras.php" title="ver carrito de compras">
+    <!--		<a href="./carritodecompras.php" title="ver carrito de compras">
 			<img src="./imagenes/carrito.png">
         </a>-->
+    
+        <header>
+            <div class="header-site">
+                <div class="encabezado">
+                    <h1>Sistema de Gestión de Ventas</h1>
+                </div>
+
+                <div class="navsup">
+                    <p> Bienvenido <b><?php echo $_SESSION['Nombre']; ?> </b>¿que deseas? </p>
+                </div>
+                <nav class="navegacion">
+                    <ul class="menu">
+                        <li><a href="./carritodecompras.php">Carrito</a></li>
+                        <li><a href="./menuuser.php">Catálogo</a></li>
+
+                        <?php if($permiso){?>
+                        <li><a href="admin.php">Administrar pedidos</a></li>
+                        <li><a href="admin/agregarproducto.php">Agregar productos al stock</a></li>
+                        <?php }else{ ?>
+
+                        <li><a href="#">Servicios</a>
+                            <ul class="submenu">
+                                <li><a href="#">Servicio #1</a></li>
+                                <li><a href="#">Servicio #2</a></li>
+                                <li><a href="#">Servicio #3</a></li>
+
+                            </ul>
+
+                        </li>
+                        <li><a href="#">Contacto</a></li>
+
+
+                        <?php }?>
+
+
+
+
+                        <a class="button close" href="menuuser.php?op=1">Cerrar Sesion</a>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
 <div class="contenido">
-	<header>
-	<h1>Wellcome to the jungle</h1>
-        <div class="navsup"> <p> Bienvenido <b><?php echo $_SESSION['Nombre']; ?> </b>¿que deseas? </p></div>
-		<nav class="navegacion">
-			<ul class="menu">
-				<li><a href="./carritodecompras.php">Ver carrito</a></li>
-				<li><a href="./menuuser.php">Ver catálogo</a></li>
+        
+            <section>
 
-				                <?php if($permiso){?> 
-				<li><a href="admin.php">Administrar pedidos</a></li> 
-                <li><a href="admin/agregarproducto.php">Agregar productos al stock</a></li>                  
-                                 <?php }else{ ?> 
-                                  
-                <li><a href="#">Servicios</a>
-					<ul class="submenu">
-						<li><a href="#">Servicio #1</a></li>
-						<li><a href="#">Servicio #2</a></li>
-						<li><a href="#">Servicio #3</a></li>
-						
-					</ul>
-					
-				</li>                  
-                <li><a href="#">Contacto</a></li> 
-                                 
-                                 
-                <?php }?>
-                                  
-                                  
-                                  
-				
-				<a class="button close" href="menuuser.php?op=1">Cerrar Sesion</a>
-			</ul>
-		</nav>
-	</header>
-
-	
-	<section>
-		
-	<?php
+            <?php
     //-----------------------------------------
     //Limito la busqueda 
     $TAMANO_PAGINA = 2; //cantidad de productos que muestro por pagina
@@ -104,14 +113,14 @@ if(isset($_SESSION['Password'])&&isset($_SESSION['Usuario'])){
     
 		while ($f=mysqli_fetch_array($query)) {
 		?>
-			<div class="producto">
-			<center>
-				<img src="./productos/<?php echo $f['imagen'];?>"><br>
-				<span><?php echo $f['nombre'];?></span><br>
-				<a href="./detalles.php?id=<?php  echo $f['id'];?>">ver</a>
-			</center>
-		</div>
-	<?php
+            <div class="producto">
+                <center>
+                    <img src="./productos/<?php echo $f['imagen'];?>"><br>
+                    <span><?php echo $f['nombre'];?></span><br>
+                    <a href="./detalles.php?id=<?php  echo $f['id'];?>">ver</a>
+                </center>
+            </div>
+            <?php
              }
 		//cerramos el conjunto de resultado y la conexión con la base de datos
         /*mysqli_free_result($rs); 
@@ -130,15 +139,30 @@ if(isset($_SESSION['Password'])&&isset($_SESSION['Usuario'])){
         
        
 	?>
-		
-		
 
-		
-	</section>
-</div>	
+
+
+
+        </section>
+    </div>
+    
+        <footer class="site-footer">
+        <div class="contenedor contenedor-footer">
+            <nav class="nave">
+                <!-- NAVEGACION DENTRO DE HEADER-->
+                <a href="nosotros.html">Nosotros</a>
+                <a href="anuncios.html">Anuncios</a>
+                <a href="Blog.html">Blog</a>
+                <a href="contacto.html">Contacto</a>
+                <a target="_blank" href="http://www.google.com">Ir a google</a>
+            </nav>
+            <p class="copyright">Creado por Bruno Di Giorgio 2020 &copy;</p>
+        </div>
+    </footer>
 
 </body>
-</html>  
+
+</html>
 
 <!--//--------------------------------FIN HTML------------------------------------------------------>
 <?php    

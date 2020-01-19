@@ -11,7 +11,7 @@ if(isset($_SESSION['Password'])&&isset($_SESSION['Usuario'])){
     <title>Sistema de gestion de ventas</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <meta name="viewport" content="width=divice-width,user-scalable=no,initial-scale=1,maximum-scale=1,minimum-scale=1">
-    <link rel="stylesheet" href="estilos.css">
+    <link rel="stylesheet" href="css/estiloslogin.css">
     <script src="js/validar.js"></script>
 
 </head>
@@ -19,15 +19,16 @@ if(isset($_SESSION['Password'])&&isset($_SESSION['Usuario'])){
 <body>
     <main>
 
-        <link rel="stylesheet" href="estilos.css">
-
+        <!-----------------------HEADER------------------------------------------>
         <header>
             <div class="header-site">
                 <h1 id="h1">Sistema de gestion de ventas</h1>
+               
             </div>
+            
         </header>
         <script src="js/validar.js"></script>
-
+        <!-- NAV DEL LOGIN-->
         <nav class="nav-header">
             <ul class="elementos">
                 <li class="elemento">
@@ -41,7 +42,7 @@ if(isset($_SESSION['Password'])&&isset($_SESSION['Usuario'])){
             </ul>
         </nav>
 
-        <link rel="stylesheet" href="estilos.css">
+
 
         <?php
        
@@ -53,7 +54,8 @@ if(isset($_SESSION['Password'])&&isset($_SESSION['Usuario'])){
                             if($op==1)
                             {
                                 $nombre=$_GET['nombre'];$mail=$_GET['mail'];
-    ?> <div class="mensaje" style="background-color:powderblue;">
+    ?>
+        <div class="mensaje" style="background-color:powderblue;">
             <center>
                 <h2> "Nombre de usuario no disponible"</h2>
             </center>

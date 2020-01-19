@@ -8,48 +8,61 @@
 }
 
 .navsup{
-    width: 1000px;
+    width: 100%;
 	margin: 30px auto;
-	background: #fff;
-    border-radius: 10px;
     text-align: center;
     font-family: 'Open sans';
+    color: aliceblue;
 }
+
+
 .contenido{
-   
     
-}
-
-
-body{
-    display: block;
+    display: flex;
+    justify-content: space-between;
     background-image:url("../imagenes/body.jpg");
     background-size: 100% 100%;
     background-attachment: fixed;
-        
+    
      
 
 }
 
 
-header{
+.header-site{
+    
+    height: 200px;
 	width: 100%;
+    background-color: #333333;
+    
 }
 
 .navegacion{
-	width: 1000px;
+	width: 100%;
 	margin: 30px auto;
 	background: #fff;
-    border-radius: 10px;
+   
 }
 
 .navegacion ul{
 	list-style: none;
+    background: #333333;
+
+
 }
 
 .menu > li{
 	position: relative;
 	display: inline-block;
+    background: rgba(239,197,202,1);
+background: rgba(248,80,50,1);
+background: -moz-linear-gradient(top, rgba(248,80,50,1) 0%, rgba(241,111,92,1) 50%, rgba(246,41,12,1) 51%, rgba(240,47,23,1) 71%, rgba(231,56,39,1) 100%);
+background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(248,80,50,1)), color-stop(50%, rgba(241,111,92,1)), color-stop(51%, rgba(246,41,12,1)), color-stop(71%, rgba(240,47,23,1)), color-stop(100%, rgba(231,56,39,1)));
+background: -webkit-linear-gradient(top, rgba(248,80,50,1) 0%, rgba(241,111,92,1) 50%, rgba(246,41,12,1) 51%, rgba(240,47,23,1) 71%, rgba(231,56,39,1) 100%);
+background: -o-linear-gradient(top, rgba(248,80,50,1) 0%, rgba(241,111,92,1) 50%, rgba(246,41,12,1) 51%, rgba(240,47,23,1) 71%, rgba(231,56,39,1) 100%);
+background: -ms-linear-gradient(top, rgba(248,80,50,1) 0%, rgba(241,111,92,1) 50%, rgba(246,41,12,1) 51%, rgba(240,47,23,1) 71%, rgba(231,56,39,1) 100%);
+background: linear-gradient(to bottom, rgba(248,80,50,1) 0%, rgba(241,111,92,1) 50%, rgba(246,41,12,1) 51%, rgba(240,47,23,1) 71%, rgba(231,56,39,1) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f85032', endColorstr='#e73827', GradientType=0 );
 }
 
 .menu > li > a{
@@ -88,13 +101,13 @@ header{
 	visibility: visible;
 	opacity: 1;
 }
-header h1{
-    width: 1000px;
-	margin: 30px auto;
-	background: #fff;
-    border-radius: 10px;
+.encabezado{
+
+    width: 100%;
+	color: aliceblue;
     text-align: center;
     font-family: 'Open sans';
+    
 /*	margin-left: 10%;
 	width: 30%;
 	display: inline-block;
@@ -104,12 +117,13 @@ h2{
    color: aliceblue; 
     font-family: 'Open sans'; 
 }
-a{color:crimson;
+a{
+    color:crimson;
 }
 
 .button {
   display: inline-block;
-  border-radius: 10px;
+  border-radius: 6px;
   background-color: #f4511e;
   border: none;
   color: #FFFFFF;
@@ -153,4 +167,51 @@ position: absolute;
     width: 150px;
     margin-left: 5em;
     
+}
+/*footer*/
+
+.site-footer {
+    
+    
+    background-color: #333333;
+    height: 5rem;
+    width: 100%;
+    bottom: 0;
+
+
+
+}
+
+.copyright {
+    margin: 0;
+    color: white;
+}
+
+.contenedor-footer {
+
+    padding: 1rem 1rem;
+    display: flex;
+    justify-content: space-between;
+
+
+}
+
+.nave a {
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+    margin-right: 2rem;
+    /*separacion  de 20px entra cada elemento a la derecha */
+}
+
+/* uso de pseudo selectores*/
+.nave a:last-of-type {
+    margin: 0;
+    /*con esto cambiamos el margin right del ultimo elemento de la barra;*/
+
+}
+
+.nave a:hover {
+    /* hover al poner el mouse arriba*/
+    color: aquamarine;
 }

@@ -1,15 +1,20 @@
+/*Hoja de estilo de login*/
 html {
-    background-image: url(imagenes/imglogin.jpg);
-    background-position: center center;
-    background-size: cover;
+
+
     height: 100vh;
-    min-height: 40rem;
     font-size: 62.5%;
     /* Reset para REMS 62.5% =10px de 16px,entonces 1rem serán 10ppx ,los rem son mejor escalables en dispositivos mó viles*/
 
 
 }
-
+body{
+    background-image: url(../imagenes/imglogin.jpg);
+    background-position: center center;
+    background-size: cover;
+    background-attachment: fixed;
+    
+}
 * {
     margin: 0;
     padding: 0;
@@ -19,6 +24,7 @@ html {
 
 .header-site {
     background-color: #282638;
+
 }
 
 h1 {
@@ -32,8 +38,8 @@ h1 {
 
 
 main {
-
-    min-height: calc(100vh - 5rem - 8rem);
+    height: 600px;
+    min-height: calc(100vh - 5rem - 5rem);
 
     /* background: #DEDEDE;*/
     /*    display: flex;*/
@@ -123,10 +129,11 @@ input {
     margin: 10px 0;
     font-size: 15px;
 }
-.recordar{
+
+.recordar {
     display: flex;
-  
- 
+
+
 }
 
 input#remember {
@@ -203,7 +210,7 @@ input[type="submit"]:active {
 .site-footer {
     margin-top: 3rem;
     background-color: #333333;
-    height: 10rem;
+    height: 5rem;
     width: 100%;
     bottom: 0;
 
@@ -217,17 +224,18 @@ input[type="submit"]:active {
 }
 
 .contenedor-footer {
-    
-    padding: 3rem 1rem;
+
+    padding: 1rem 1rem;
     display: flex;
     justify-content: space-between;
+
 
 }
 
 .navegacion a {
     color: white;
     text-decoration: none;
-    font-size: 1.8rem;
+    font-size: 1rem;
     margin-right: 2rem;
     /*separacion  de 20px entra cada elemento a la derecha */
 }
@@ -243,4 +251,3 @@ input[type="submit"]:active {
     /* hover al poner el mouse arriba*/
     color: aquamarine;
 }
-

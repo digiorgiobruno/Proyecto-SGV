@@ -1,6 +1,6 @@
 <?php
 	include ("../conexion.php");
-	if(!isset($_POST['nombre']) &&  !isset($_POST['descripcion']) && !isset($_POST['precio'])){
+	if(!isset($_POST['nombre']) &&  !isset($_POST['descripcion']) && !isset($_POST['precio']) && !isset($_POST['cantidad'])){
 		header("Location: agregarproducto.php");
 	}else{
 			$allowedExts = array("gif", "jpeg", "jpg", "png");
