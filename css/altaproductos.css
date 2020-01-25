@@ -25,10 +25,12 @@ section{
 }
 
 .aceptar{
+    
 	background-color: #f13453;
 	color:white;
 	padding-left: 20px;
 	padding-right: 20px;
+    padding-top: 2px;
 	border-radius: 4px;
 	font-size: 1.3rem;
 

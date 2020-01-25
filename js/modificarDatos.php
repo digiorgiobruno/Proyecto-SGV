@@ -1,4 +1,5 @@
 <?php
+//inicio sesión
 session_start();
 					$arreglo=$_SESSION['carrito'];
 					$total=0;

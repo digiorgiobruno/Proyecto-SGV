@@ -6,19 +6,15 @@ if(isset($_SESSION['Password'])&&isset($_SESSION['Usuario'])){
     if($_SESSION['Usuario']=='admin'){
         $permiso=1;
     }
+    include './header.php';
 ?>
-
 <!DOCTYPE html>
 <html lang="es">
 
 <head>
     <meta charset="utf-8" />
     <title>Carrito de Compras</title>
-    <link rel="stylesheet" type="text/css" href="./css/navstyle.css">
-    <link rel="stylesheet" type="text/css" href="./css/estilos.css">
-
-
-
+    <link rel="stylesheet" type="text/css" href="./css/stylepage.css">
     <script type="text/javascript" src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
     <script type="text/javascript" href="./js/scripts.js"></script>
 
@@ -26,56 +22,9 @@ if(isset($_SESSION['Password'])&&isset($_SESSION['Usuario'])){
 
 <body>
 
+    <div class="contenido">
 
-    <!--		<a href="./carritodecompras.php" title="ver carrito de compras">
-			<img src="./imagenes/carrito.png">
-        </a>-->
-    
-        <header>
-            <div class="header-site">
-                <div class="encabezado">
-                    <h1>Sistema de Gestión de Ventas</h1>
-                </div>
-
-                <div class="navsup">
-                    <p> Bienvenido <b><?php echo $_SESSION['Nombre']; ?> </b>¿que deseas? </p>
-                </div>
-                <nav class="navegacion">
-                    <ul class="menu">
-                        <li><a href="./carritodecompras.php">Carrito</a></li>
-                        <li><a href="./menuuser.php">Catálogo</a></li>
-
-                        <?php if($permiso){?>
-                        <li><a href="admin.php">Administrar pedidos</a></li>
-                        <li><a href="admin/agregarproducto.php">Agregar productos al stock</a></li>
-                        <?php }else{ ?>
-
-                        <li><a href="#">Servicios</a>
-                            <ul class="submenu">
-                                <li><a href="#">Servicio #1</a></li>
-                                <li><a href="#">Servicio #2</a></li>
-                                <li><a href="#">Servicio #3</a></li>
-
-                            </ul>
-
-                        </li>
-                        <li><a href="#">Contacto</a></li>
-
-
-                        <?php }?>
-
-
-
-
-                        <a class="button close" href="menuuser.php?op=1">Cerrar Sesion</a>
-                    </ul>
-                </nav>
-            </div>
-        </header>
-
-<div class="contenido">
-        
-            <section>
+        <section>
 
             <?php
     //-----------------------------------------
@@ -145,26 +94,14 @@ if(isset($_SESSION['Password'])&&isset($_SESSION['Usuario'])){
 
         </section>
     </div>
-    
-        <footer class="site-footer">
-        <div class="contenedor contenedor-footer">
-            <nav class="nave">
-                <!-- NAVEGACION DENTRO DE HEADER-->
-                <a href="nosotros.html">Nosotros</a>
-                <a href="anuncios.html">Anuncios</a>
-                <a href="Blog.html">Blog</a>
-                <a href="contacto.html">Contacto</a>
-                <a target="_blank" href="http://www.google.com">Ir a google</a>
-            </nav>
-            <p class="copyright">Creado por Bruno Di Giorgio 2020 &copy;</p>
-        </div>
-    </footer>
+
+    <?php
+    include './footer.php';?>
 
 </body>
 
 </html>
-
-<!--//--------------------------------FIN HTML------------------------------------------------------>
-<?php    
+<?php
+   
 }else{?> <p>No has iniciado sesion <a href="index.php">Volver al inicio</a></p> <?php  }
 ?>

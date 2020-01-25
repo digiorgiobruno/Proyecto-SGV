@@ -1,7 +1,12 @@
 <?php
 session_start();
 if(isset($_SESSION['Password'])&&isset($_SESSION['Usuario'])){
-
+        
+        $permiso=0;
+    if($_SESSION['Usuario']=='admin'){
+        $permiso=1;
+    }
+    
 	include './conexion.php';
 	if(isset($_SESSION['carrito'])){
 		if(isset($_GET['id'])){
@@ -36,7 +41,9 @@ if(isset($_SESSION['Password'])&&isset($_SESSION['Usuario'])){
 								'Cantidad'=>1);
                                 $_SESSION['carrito']=$arreglo;
                         }else{
-                        ?><center><h2> Elemento no encontrado</h2></center> <?php
+                        ?><center>
+    <h2> Elemento no encontrado</h2>
+</center> <?php
                             
                         }
 
@@ -74,24 +81,24 @@ if(isset($_SESSION['Password'])&&isset($_SESSION['Usuario'])){
 <!-- --------------------HTML----------------------------  -->
 <!DOCTYPE html>
 <html lang="es">
-<head>
-	<meta charset="utf-8"/>
-	<title>Carrito de Compras</title>
 
-    <link rel="stylesheet" type="text/css" href="./css/navstyle.css">
-	<link rel="stylesheet" type="text/css" href="./css/estilos.css">
-	<script type="text/javascript" src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
-	<script type="text/javascript"  src="./js/scripts.js"></script>
+<head>
+    <meta charset="utf-8" />
+    <title>Carrito de Compras</title>
+
+    <link rel="stylesheet" type="text/css" href="./css/stylepage.css">
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="./js/scripts.js"></script>
 </head>
+
 <body>
-	<header>
-		<h1>Carrito de compras</h1>
-		<a href="./carritodecompras.php" title="ver carrito de compras">
-			<img src="./imagenes/carrito.png">
-		</a>
-	</header>
-	<section>
-		<?php
+
+<?php include './header.php'; ?>
+
+
+    <div class="contenido">
+        <section>
+            <?php
 			$total=0;
 			if(isset($_SESSION['carrito'])){
 			$datos=$_SESSION['carrito'];
@@ -100,22 +107,19 @@ if(isset($_SESSION['Password'])&&isset($_SESSION['Usuario'])){
 			for($i=0;$i<count($datos);$i++){
 				
 	?>
-				<div class="producto">
-					<center>
-						<img src="./productos/<?php echo $datos[$i]['Imagen'];?>"><br>
-						<span ><?php echo $datos[$i]['Nombre'];?></span><br>
-						<span>Precio: <?php echo $datos[$i]['Precio'];?></span><br>
-						<span>Cantidad: 
-							<input type="text" value="<?php echo $datos[$i]['Cantidad'];?>"
-							data-precio="<?php echo $datos[$i]['Precio'];?>"
-							data-id="<?php echo $datos[$i]['Id'];?>"
-							class="cantidad">
-						</span><br>
-						<span class="subtotal">Subtotal:<?php echo $datos[$i]['Cantidad']*$datos[$i]['Precio'];?></span><br>
-						<a href="#" class="elimina" data-id="<?php echo $datos[$i]['Id'];?>">Eliminar del carrito</a>
-					</center>
-				</div>
-			<?php
+            <div class="producto">
+                <center>
+                    <img src="./productos/<?php echo $datos[$i]['Imagen'];?>"><br>
+                    <span><?php echo $datos[$i]['Nombre'];?></span><br>
+                    <span>Precio: <?php echo $datos[$i]['Precio'];?></span><br>
+                    <span>Cantidad:
+                        <input type="text" value="<?php echo $datos[$i]['Cantidad'];?>" data-precio="<?php echo $datos[$i]['Precio'];?>" data-id="<?php echo $datos[$i]['Id'];?>" class="cantidad">
+                    </span><br>
+                    <span class="subtotal">Subtotal:<?php echo $datos[$i]['Cantidad']*$datos[$i]['Precio'];?></span><br>
+                    <a href="#" class="elimina" data-id="<?php echo $datos[$i]['Id'];?>">Eliminar del carrito</a>
+                </center>
+            </div>
+            <?php
 				$total=($datos[$i]['Cantidad']*$datos[$i]['Precio'])+$total;
 			}
 				
@@ -124,16 +128,26 @@ if(isset($_SESSION['Password'])&&isset($_SESSION['Usuario'])){
 			}
 			echo '<center><h2 id="total">Total: '.$total.'</h2></center>';
 		      if($total){
-        ?><div > <center> <a class="button"  href="./comprar/comprar.php">Comprar</a> </center> </div> <?php
+        ?>
+            <div class="enlacegroup">
+                <div class="enlace">
+                    <a class="button" href="./comprar/comprar.php">Comprar</a>
+                </div>
+                <?php
 		              }
         ?>
-		<center><a href="menuuser.php">Ver catalogo</a></center>
-		
-		
+                <div class="enlace">
+                    <a href="menuuser.php">Volver al catalogo</a>
+                </div>
+            </div>
 
-		
-	</section>
+
+        </section>
+    </div>
+<?php include './footer.php' ?>
+
 </body>
+
 </html>
 
 

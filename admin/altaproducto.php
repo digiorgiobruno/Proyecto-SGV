@@ -1,7 +1,7 @@
 <?php
 	include ("../conexion.php");
 	if(!isset($_POST['nombre']) &&  !isset($_POST['descripcion']) && !isset($_POST['precio']) && !isset($_POST['cantidad'])){
-		header("Location: agregarproducto.php");
+		header("Location: ../agregarproducto.php");
 	}else{
 			$allowedExts = array("gif", "jpeg", "jpg", "png");
 			$temp = explode(".", $_FILES["file"]["name"]);
@@ -38,7 +38,7 @@
 							'".$imagen."',
 							'".$precio."','".$cantidad."')";
 					mysqli_query($con,$Sql);
-					header ("Location: agregarproducto.php");
+					header ("Location: ../agregarproducto.php");
 		      }
 		    }
 		  }else{

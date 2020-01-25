@@ -8,9 +8,9 @@ if(isset($_SESSION['Password'])&&isset($_SESSION['Usuario'])){
                             header("location: index.php");
                             }
     
-    
+    /* //se muestran variables de sesion en pantalla para pruebas
     echo "<p>variables de session <br> Bienvenido ".$_SESSION['Nombre']." ".$_SESSION['Usuario']." ".$_SESSION['Password']." ".$_SESSION['Mail']. "<p>";
-
+    */
  
    
     

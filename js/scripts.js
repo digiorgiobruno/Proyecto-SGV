@@ -1,16 +1,14 @@
 //script correspondiente a la pagina carritodecompras.php
 var inicio=function () {
 	$(".cantidad").keyup(function(e){
+        //primero verificamos que el valor ingresado no sea vacio
 		if($(this).val()!=''){
 			if(e.keyCode==13){
 				var id=$(this).attr('data-id');
 				var precio=$(this).attr('data-precio');
-				var cantidad=$(this).val();
-				$(this).parentsUntil('.producto').find('.subtotal').text('Subtotal: '+(precio*cantidad));
-				$.post('./js/modificarDatos.php',{
-					Id:id,
-					Precio:precio,
-					Cantidad:cantidad
+				var cantidad=$(this).val();//almacenamos el valor que actualmente esta en el DOM
+				$(this).parentsUntil('.producto').find('.subtotal').text('Subtotal: '+(precio*cantidad));//navego por el DOM hasta encontrar la clase producto, apartir de ahí busco la clase subtotal y le cambio su texto
+				$.post('./js/modificarDatos.php',{ Id:id,Precio:precio,Cantidad:cantidad // los parametros que le envio
 				},function(e){
 						$("#total").text('Total: '+e);
 				});
