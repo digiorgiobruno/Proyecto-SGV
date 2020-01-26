@@ -20,6 +20,8 @@
                     <?php if($permiso){?>
                     <li><a href="admin.php">Administrar pedidos</a></li>
                     <li><a href="agregarproducto.php">Agregar productos al stock</a></li>
+                    <li><a href="modificar.php">modificar/eliminar productos</a></li>
+                    
                     <?php }else{ ?>
 
 

@@ -1,4 +1,4 @@
-<!---Archivo incluido en menuuser.php-------------------------------HTML------------------------------------------------------>
+<!---Archivo incluido en menuuser.php------------HTML--------------------------->
 <?php
 session_start();
 if(isset($_SESSION['Password'])&&isset($_SESSION['Usuario'])){
@@ -6,7 +6,7 @@ if(isset($_SESSION['Password'])&&isset($_SESSION['Usuario'])){
     if($_SESSION['Usuario']=='admin'){
         $permiso=1;
     }
-    include './header.php';
+    
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -21,7 +21,7 @@ if(isset($_SESSION['Password'])&&isset($_SESSION['Usuario'])){
 </head>
 
 <body>
-
+    <?php include './header.php';?>
     <div class="contenido">
 
         <section>
@@ -77,12 +77,14 @@ if(isset($_SESSION['Password'])&&isset($_SESSION['Usuario'])){
         //muestro los distintos índices de las páginas, si es que hay varias páginas 
         if ($total_paginas > 1){ 
    	        for ($i=1;$i<=$total_paginas;$i++){ 
-      	     if ($pagina == $i) 
+      	     if ($pagina == $i){
          	//si muestro el índice de la página actual, no coloco enlace 
-         	  echo $pagina . " "; 
-      	else 
+             echo $pagina . " "; 
+             
+             }
+      	else{ 
          	//si el índice no corresponde con la página mostrada actualmente, coloco el enlace para ir a esa página 
-         	echo "<a href='indexuser.php?pagina=". $i ."'>" . $i . "</a> "; 
+         	echo "<a href='indexuser.php?pagina=". $i ."'>" . $i . "</a> "; }
    	} 
 }
         

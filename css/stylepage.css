@@ -1,3 +1,22 @@
+html {
+
+    height: 100vh;
+    /* Reset para REMS 62.5% =10px de 16px,entonces 1rem serán 10ppx ,los rem son mejor escalables en dispositivos mó viles*/
+
+
+}
+
+
+body{
+    
+    
+    background-image: url("../imagenes/body.jpg");
+    background-size: 100% 100%;
+    background-size: cover;
+    background-attachment: fixed;
+   
+
+}
 *{
     
     margin: 0;
@@ -8,11 +27,33 @@
       
 
 }
+/*HEADER*/
+.header-site{
+    
+    display: flex;
+    flex-direction: column;
+    justify-content:space-between;
+     align-items: center;
+    background: #333333;
+    width: 100%;
+}
+.encabezado {
+    
+    
+    width: 100%;
+    color: aliceblue;
+    text-align: center;
+    font-family: 'Open sans';
 
-
+    /*	margin-left: 10%;
+	width: 30%;
+	display: inline-block;
+	vertical-align: top;*/
+}
+/*nav*/
 .navsup {
   
-  
+ 
     margin: 30px auto;
     text-align: center;
     font-family: 'Open sans';
@@ -21,44 +62,17 @@
 }
 
 
-.contenido {
 
-    min-height: 400px;
-    display: flex;
-    flex-direction: column;
-    justify-content:space-between;
-    background-image: url("../imagenes/body.jpg");
-    background-size: 100% 100%;
-    background-attachment: fixed;
-   
-
-
-}
-
-
-.header-site {
-    
-    background-color: #333333;
-   
-
-}
-
-.navegacion {
-
-
-   
-    background: #fff;
-  
-
-
+.navegacion{
+    width: 100%;
+     background: #333333;
+     display: flex;
+    justify-content: center;
 }
 
 .navegacion ul {
     list-style: none;
-    background: #333333;
-    width: 100%;
-    display: flex;
-    justify-content: center;
+   
 }
 
 .menu > li {
@@ -80,19 +94,8 @@
     transition: all .3s;
 }
 
-.encabezado {
-    
 
-    
-    color: aliceblue;
-    text-align: center;
-    font-family: 'Open sans';
 
-    /*	margin-left: 10%;
-	width: 30%;
-	display: inline-block;
-	vertical-align: top;*/
-}
 
 h2 {
     color: aliceblue;
@@ -120,7 +123,7 @@ a {
     border: none;
     color: #FFFFFF;
     text-align: center;
-    font-size: 28px;
+    font-size: 25px;
     padding: 20px;
     width: 200px;
     transition: all 0.5s;
@@ -161,7 +164,7 @@ a {
 
 .close {
     padding: 10px;
-    font-size: 19px;
+    font-size: 17px;
     width: 150px;
 
 
@@ -171,7 +174,7 @@ a {
 
 .site-footer {
 
-    
+   
     background-color: #333333;
     height: 5rem;
     bottom: 0;
@@ -217,14 +220,13 @@ a {
 section {
  
 
-    min-height: 400px;
-    width: 100%;
+    min-height: 300px;
     /*border-radius: 10px;*/
     padding: 2%;
-    margin: 50px auto;
+    margin: 20px auto;
     /*margin-left: 10%;*/
     /*margin-top: 50px;*/
-    background-color: rgba(0, 0, 0, 0.51);
+    background-color: rgba(0, 0, 0, 0.61);
 }
 
 .producto {
@@ -303,4 +305,10 @@ section {
     flex-direction: column;
     
     
+}
+
+
+.modificar-site{
+    background-color: aliceblue;
+
 }
