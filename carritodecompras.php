@@ -96,6 +96,7 @@ if(isset($_SESSION['Password'])&&isset($_SESSION['Usuario'])){
 <?php include './header.php'; ?>
 
 
+   
     <div class="contenido">
         <section>
             <?php

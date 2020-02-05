@@ -36,6 +36,7 @@
 				<td>Nombre</td>
 				<td>Descripcion</td>
 				<td>Precio</td>
+				<td>Cantidad</td>
 				<td>Eliminar</td>
 				<td>Modificar</td>
 			</tr>

@@ -208,6 +208,8 @@ input[type="submit"]:active {
 /*footer*/
 
 .site-footer {
+    
+    position: absolute;
     margin-top: 3rem;
     background-color: #333333;
     height: 5rem;

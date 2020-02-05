@@ -9,7 +9,7 @@ html {
 
 body{
     
-    
+    overflow-x: hidden;
     background-image: url("../imagenes/body.jpg");
     background-size: 100% 100%;
     background-size: cover;
@@ -33,7 +33,7 @@ body{
     display: flex;
     flex-direction: column;
     justify-content:space-between;
-     align-items: center;
+    align-items: center;
     background: #333333;
     width: 100%;
 }
@@ -94,8 +94,17 @@ body{
     transition: all .3s;
 }
 
+.form-busqueda{
+    display: flex;
+    justify-content: center;
+    color: aliceblue;
+    background:  #333333;
+    padding: 0.4rem;
+}
 
-
+.form-busqueda input{
+    margin-left: 0.5rem;
+}
 
 h2 {
     color: aliceblue;
@@ -174,11 +183,13 @@ a {
 
 .site-footer {
 
-   
+    position: relative;   
     background-color: #333333;
     height: 5rem;
     bottom: 0;
-
+    margin-top: 3rem;
+    width: 100%;
+ 
 
 
 }
@@ -187,7 +198,9 @@ a {
     margin: 0;
     color: white;
 }
-
+.contenido{
+    min-height: calc(100vh - 300px);
+}
 .contenedor-footer {
  
     padding: 1rem 1rem;
@@ -228,7 +241,19 @@ section {
     /*margin-top: 50px;*/
     background-color: rgba(0, 0, 0, 0.61);
 }
-
+.indice{
+   
+    display: flex;
+    justify-content: center;
+    
+}
+.indice a {
+    margin-left: 2px;
+}
+.productos-contenedor{
+ display: flex;
+    justify-content: space-around;
+}
 .producto {
 
     width: 300px;

@@ -16,7 +16,8 @@ if(isset($_SESSION['Password'])&&isset($_SESSION['Usuario'])){
     <title>Carrito de Compras</title>
     <link rel="stylesheet" type="text/css" href="./css/stylepage.css">
     <script type="text/javascript" src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
-    <script type="text/javascript" href="./js/scripts.js"></script>
+    <script type="text/javascript" src="./js/busqueda.js"></script>
+    
 
 </head>
 
@@ -24,12 +25,19 @@ if(isset($_SESSION['Password'])&&isset($_SESSION['Usuario'])){
     <?php include './header.php';?>
     <div class="contenido">
 
-        <section>
 
+        <div class="form-busqueda">
+            <label for="caja_busqueda">Buscar</label>
+            <input type="text" name="caja_busqueda" id="caja_busqueda">
+
+        </div>
+
+        <section>
+       <div class="productos-contenedor">
             <?php
     //-----------------------------------------
     //Limito la busqueda 
-    $TAMANO_PAGINA = 2; //cantidad de productos que muestro por pagina
+    $TAMANO_PAGINA = 3; //cantidad de productos que muestro por pagina
 
     //examino la página a mostrar y el inicio del registro a mostrar 
     
@@ -69,30 +77,36 @@ if(isset($_SESSION['Password'])&&isset($_SESSION['Usuario'])){
                     <a href="./detalles.php?id=<?php  echo $f['id'];?>">ver</a>
                 </center>
             </div>
-            <?php
-             }
-		//cerramos el conjunto de resultado y la conexión con la base de datos
-        /*mysqli_free_result($rs); 
-        mysqli_close($conn);*/
-        //muestro los distintos índices de las páginas, si es que hay varias páginas 
-        if ($total_paginas > 1){ 
-   	        for ($i=1;$i<=$total_paginas;$i++){ 
-      	     if ($pagina == $i){
-         	//si muestro el índice de la página actual, no coloco enlace 
-             echo $pagina . " "; 
-             
-             }
-      	else{ 
-         	//si el índice no corresponde con la página mostrada actualmente, coloco el enlace para ir a esa página 
-         	echo "<a href='indexuser.php?pagina=". $i ."'>" . $i . "</a> "; }
-   	} 
-}
-        
-       
-	?>
+               
+               <?php
+                             } ?>
+            </div>                
+                             
+            <div class="indice">
+                                <?php
+                             
+                        //cerramos el conjunto de resultado y la conexión con la base de datos
+                        /*mysqli_free_result($rs); 
+                        mysqli_close($conn);*/
+                        //muestro los distintos índices de las páginas, si es que hay varias páginas 
+                        if ($total_paginas > 1){ 
+                            for ($i=1;$i<=$total_paginas;$i++){ 
+                             if ($pagina == $i){
+                            //si muestro el índice de la página actual, no coloco enlace 
+                             echo $pagina . " "; 
+
+                             }
+                        else{ 
+                            //si el índice no corresponde con la página mostrada actualmente, coloco el enlace para ir a esa página 
+                            echo "<a href='indexuser.php?pagina=". $i ."'>" . $i . "</a> "; }
+                    } 
+                }
 
 
+                    ?>
+         
 
+        </div>
 
         </section>
     </div>
@@ -101,7 +115,9 @@ if(isset($_SESSION['Password'])&&isset($_SESSION['Usuario'])){
     include './footer.php';?>
 
 </body>
-
+   
+    <script type="text/javascript" href="./js/busqueda.js"></script>
+    
 </html>
 <?php
    
