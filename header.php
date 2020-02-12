@@ -25,7 +25,7 @@
                     <?php }else{ ?>
 
 
-                    <li><a href="#">Contacto</a></li>
+                    <!--<li><a href="#">Contacto</a></li> -->
 
 
                     <?php }?>
@@ -33,7 +33,7 @@
 
 
 
-                    <a class="button close" href="menuuser.php?op=1">Cerrar Sesion</a>
+                    <a class="button close" href="menuuser.php?op=1">Cerrar Sesión</a>
                 </ul>
             </nav>
         </div>

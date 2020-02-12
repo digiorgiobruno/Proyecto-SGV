@@ -1,10 +1,14 @@
 <!---Archivo incluido en menuuser.php------------HTML--------------------------->
 <?php
-session_start();
+
 if(isset($_SESSION['Password'])&&isset($_SESSION['Usuario'])){
+    
+  
+    
     $permiso=0;
     if($_SESSION['Usuario']=='admin'){
         $permiso=1;
+        
     }
     
 ?>
@@ -118,8 +122,8 @@ if(isset($_SESSION['Password'])&&isset($_SESSION['Usuario'])){
    
     <script type="text/javascript" href="./js/busqueda.js"></script>
     
-</html>
+</html>    
 <?php
    
-}else{?> <p>No has iniciado sesion <a href="index.php">Volver al inicio</a></p> <?php  }
+}else{?> <p>No has iniciado sesion <a  href="menuuser.php?op=1">Volver al inicio</a></p> <?php  }
 ?>

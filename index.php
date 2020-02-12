@@ -1,7 +1,9 @@
 <?php
 session_start();
-if(isset($_SESSION['Password'])&&isset($_SESSION['Usuario'])){
-    header("location: ./menuuser.php"); }
+if(isset($_SESSION['Password'])&&isset($_SESSION['Usuario'])|| !empty($_COOKIE['datos'])){
+   
+    header("location: ./menuuser.php");}
+   
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -12,7 +14,14 @@ if(isset($_SESSION['Password'])&&isset($_SESSION['Usuario'])){
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <meta name="viewport" content="width=divice-width,user-scalable=no,initial-scale=1,maximum-scale=1,minimum-scale=1">
     <link rel="stylesheet" href="css/estiloslogin.css">
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
     <script src="js/validar.js"></script>
+
+
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
 </head>
 
@@ -23,16 +32,16 @@ if(isset($_SESSION['Password'])&&isset($_SESSION['Usuario'])){
         <header>
             <div class="header-site">
                 <h1 id="h1">Sistema de gestion de ventas</h1>
-               
+
             </div>
-            
+
         </header>
         <script src="js/validar.js"></script>
         <!-- NAV DEL LOGIN-->
         <nav class="nav-header">
             <ul class="elementos">
                 <li class="elemento">
-                    <h3>SGV</h3>
+                    <h3 id="sgva">SGV</h3>
                 </li>
                 <li id="op1" class="elemento"><a>Iniciar sesión</a> </li>
                 <li id="op2" class="elemento"><a>Crear Usuario</a> </li>
@@ -96,17 +105,52 @@ if(isset($_SESSION['Password'])&&isset($_SESSION['Usuario'])){
             </div>
             <input type="submit" name="INGRESAR">
         </form>
+
+<script src="js/validar.js"></script>
+        <!-- Generadorde comentarios aleatorios-->
+        <div id="testimonio">
+
+           <article>
+                <div class="container mt-5 text-center" style="width: 150px; padding:10px;">
+                    <h3 style="color:white;">Comentarios de usuarios</h3>
+                    <button id="boton" class="btn btn-primary">Siguiente</button>
+                    <div class="card">
+                        <img class="card-img-top" src="" id="imagen">
+                        <div class="card-body">
+                            <h4 class="card-title" id="nombre-us">nombre</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimoniales">
+
+                <div id="comentario" class="testimonial">
+                   
+                    
+                </div>
+                
+            </div>
+                
+            
+           </article>
+        </div>
+
+        <script src="js/validar.js"></script>
+        <script src="javascript.js"></script>
+
     </main>
     <footer class="site-footer">
         <div class="contenedor contenedor-footer">
-            <nav class="navegacion">
-                <!-- NAVEGACION DENTRO DE HEADER-->
+           <!-- 
+               <nav class="navegacion">
+                <!-- NAVEGACION DENTRO DE HEADER
                 <a href="nosotros.html">Nosotros</a>
                 <a href="anuncios.html">Anuncios</a>
                 <a href="Blog.html">Blog</a>
                 <a href="contacto.html">Contacto</a>
                 <a target="_blank" href="http://www.google.com">Ir a google</a>
-            </nav>
+            </nav> 
+            
+            -->
             <p class="copyright">Creado por Bruno Di Giorgio 2020 &copy;</p>
         </div>
     </footer>

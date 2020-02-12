@@ -1,36 +1,69 @@
 //Script correspondiente al login
 /*eventos con addEventListener ,tener en cuenta que estos no funcionan para ciertas versiones antiguas*/
+
+
+
 function loseventos()
 {
     
     var op1=document.getElementById("op1");/*guardamos titulo iniciar sesion en op1 */
     var op2=document.getElementById("op2");/*guardamos titulo crear usuario en op2 */
     /*ponemos un evento a escuchar,que si se hace click ahi se llama a showlogin*/
+    var form1= document.getElementById("form1");
+    var form2= document.getElementById("form2");
+    var mensaje =document.getElementsByClassName("mensaje");
+    var testimonio = document.getElementById("testimonio");
+    
+    //var sgva1=document.getElementById("sgva");
+    
+    //sgva1.addEventListener("click",funsgv,false);
+    
     op1.addEventListener("click",showcuser,false);
      /*ponemos un evento a escuchar,que si se hace click ahi se llama a showcuser*/
     op2.addEventListener("click",showlogin,false);
     
     
 }
+
+
+
 function showlogin()
 {
+
     /*oculto form2 y muestro form1*/
     /*alert("presionaste form1");*/
-    document.getElementById("form2").style.display="none"; 
-    document.getElementById("form1").style.display="block";
-    document.getElementById("mensaje").style.display="none";//no sirve preguntar por que
+    funcionMenu1();
+    //no sirve preguntar por que
+    funcionMensaje();
+   
     
     
 }
+
+    function funcionMenu1(){
+        form2.style.display="none";
+        form1.style.display="block";
+    }
+    function funcionMensaje(){
+        
+        testimonio.style.display="none";
+        mensaje.style.display="none";
+       
+                    }
+
 function showcuser()
 
 {   /*oculto form1 y muestro form2*/
    /* alert("presionaste form2");*/
-   document.getElementById("form1").style.display="none"; 
-   document.getElementById("form2").style.display="block";
-   document.getElementById("mensaje").style.display="none";
+  funcionMenu2();
+     funcionMensaje();
    
 }
+
+   function funcionMenu2(){
+      form1.style.display="none"; 
+    form2.style.display="block";
+    }
 
 /*eventos que al cargar la ventana llaman a una funcion*/
 window.onload=loseventos();
